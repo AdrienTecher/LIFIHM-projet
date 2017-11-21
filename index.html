@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/styles.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
@@ -17,7 +18,7 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/script.js"></script>
 
-  <title>CASSINI</title>
+    <title>CASSINI</title>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
               <thead>
                 <th>Date</th><th>Prénom</th><th>Nom</th><th>Email</th><th>Choix</th>
               </thead>
-              <tbody>
+              <tbody id="tab_body">
                 <tr id="t">
                   <td>29/09/2017</td><td>Genghis</td><td>Khan</td><td>susauxmandarins@muraille.mn</td><td>Manger</td>
                 </tr>
@@ -55,30 +56,72 @@
       </div>
       <div class="row">
         <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8">
-          <form class="bordered">
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <div class="input-group ">
-                  <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <!-- Button trigger modal -->
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalNorm">
+              Ajouter un vote
+          </button>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title" id="myModalLabel">Ajout d'un Vote</h4>
                 </div>
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label class="form-control-label" for="date">Date</label>
-              <div class="input-group input-append date">
-                  <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
-                  <input class="form-control" id="date" name="date" placeholder="JJ/MM/AAAA" type="text"/>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <form role="form" id="form_ajout_vote">
+                    <div class="form-group">
+                      <label class="form-control-label" for="date">Date</label>
+                      <div class="input-group input-append date">
+                          <span class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></span>
+                          <input class="form-control" id="date" name="date" placeholder="jj/mm/aaaa" type="text"/>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-lg-6">
+                        <label for="exampleInputPassword1">Prénom</label>
+                        <div class="input-group ">
+                          <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                          <input class="form-control" id="prenom" placeholder="Wassily">
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <label for="exampleInputPassword1">Nom</label>
+                        <div class="input-group ">
+                          <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                          <input class="form-control" id="nom" placeholder="Kandinsky">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Adresse Mail</label>
+                        <div class="input-group ">
+                          <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                          <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="identifiant@domain.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleSelect1">Vote</label>
+                      <select class="form-control" id="vote" placeholder="">
+                        <option disabled selected>Selectionner un vote</option>
+                        <option>Manger</option>
+                        <option>Programmer</option>
+                        <option>Mediter</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal" id="btn_valider">Valider</button>
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler</button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
