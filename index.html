@@ -16,7 +16,6 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap-datepicker.js"></script>
     <script src="js/bootstrap-datepicker.fr.min.js"></script>
-    <script src="js/bootstrap-confirmation.js"></script>
     <script src="js/script.js"></script>
 
     <title>CASSINI</title>
@@ -31,7 +30,7 @@
       </div>
       <div class="row">
         <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8">
-          <button data-toggle="collapse" data-target="#table_vote" class="btn btn-primary">Afficher/Réduire</button>
+          <button data-toggle="collapse" data-target="#table_vote" class="btn btn-secondary btn-sm"><i class="fa fa-bars fa-fw"></i>Afficher/Réduire</button>
           <div class="table-responsive show" id="table_vote">
             <table class="table table-bordered table-hover table-striped table-condensed" >
               <thead>
@@ -58,25 +57,40 @@
       <div class="row">
         <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8">
           <!-- Button trigger modal -->
-          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_ajout">Ajouter un vote</button>
-          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_modif">Modifier le vote</button>
-          <button class="btn btn-primary btn-lg" id="btn_suppr">Supprimer le vote</button>
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_ajout">
+            <i class="fa fa-plus-square fa-fw"></i>
+            Ajouter un vote
+          </button>
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_modif">
+            <a data-toggle="tooltip" data-placement="top" title="Veuillez selectionner un vote">
+              <i class="fa fa-edit fa-fw"></i>
+              Modifier le vote
+            </a>
+          </button>
+          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_suppr" id="btn_suppr">
+            <a data-toggle="tooltip" data-placement="top" title="Veuillez selectionner un vote">
+              <i class="fa fa-trash fa-fw"></i>
+              Supprimer le vote
+            </a>
+          </button>
       </div>
     </div>
 
 
     <!-- Modal -->
-    <div class="modal fade" id="modal_ajout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal_ajout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
        <div class="modal-dialog">
             <div class="modal-content">
                 <!-- Modal Header -->
                 <div class="modal-header">
                   <h4 class="modal-title" id="myModalLabel">Ajout d'un Vote</h4>
+
                 </div>
 
                 <!-- Modal Body -->
                 <div class="modal-body">
-                  <form role="form" id="form_ajout_vote">
+                  <p id="precis"><i class="fa fa-comment-o fa-fw"></i><span>Veuillez remplir tous les champs</span></p>
+                  <form role="form" id="form_ajout_vote" autocomplete="on">
                     <div class="form-group">
                       <label class="form-control-label" for="date">Date</label>
                       <div class="input-group input-append date">
@@ -89,14 +103,14 @@
                         <label for="exampleInputPassword1">Prénom</label>
                         <div class="input-group ">
                           <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                          <input class="form-control" id="prenom" placeholder="Wassily" required>
+                          <input class="form-control" id="prenom" placeholder="Wassily" name="firstname" autocomplete="given-name" required>
                         </div>
                       </div>
                       <div class="col-lg-6">
                         <label for="exampleInputPassword1">Nom</label>
                         <div class="input-group ">
                           <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                          <input class="form-control" id="nom" placeholder="Kandinsky" required>
+                          <input class="form-control" id="nom" placeholder="Kandinsky" name="lastname" autocomplete="family-name" required>
                         </div>
                       </div>
                     </div>
@@ -104,7 +118,7 @@
                         <label for="exampleInputEmail1">Adresse Mail</label>
                         <div class="input-group ">
                           <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-                          <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" placeholder="identifiant@domain.com" required>
+                          <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" name="email" autocomplete="email" placeholder="identifiant@domain.com" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -117,28 +131,22 @@
                       </select>
                     </div>
                       <button type="submit" class="btn btn-primary" id="btn_valider">Valider</button>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Annuler</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="modal" id="modal_conf_suppr" tabindex="-1" role="dialog">
+          <div class="modal" id="modal_suppr" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
+
                 <div class="modal-body">
-                  <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-primary">Annuler</button>
-                  <button type="button" class="btn btn-primary btn-red" data-dismiss="modal">Confirmer suppression</button>
+                  <h4 class="center">Attention !</h4>
+                  <p>La suppression d'un vote est irréversible</p>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal" id="btn_conf_suppr"><i class="fa fa-trash fa-fw"></i>Confirmer suppression</button>
                 </div>
               </div>
             </div>

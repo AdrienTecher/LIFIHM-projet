@@ -2,6 +2,11 @@ table.collapse.show{
   display:table;
 }
 
+#table_vote tbody {
+   cursor:cell;
+}
+
+
 #table_vote tbody .tr:hover{
    background-color: violet!important;
 }
@@ -17,4 +22,16 @@ table.collapse.show{
 
 .center{
   text-align: center;
+}
+
+.btn{
+  cursor: pointer;
+}
+
+#precis{
+  color:#bd7415;
+}
+
+#precis span{
+  font-size: 11px;
 }

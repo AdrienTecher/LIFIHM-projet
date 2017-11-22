@@ -11,6 +11,36 @@ $(document).ready ( function () {
 
     $('#btn_suppr').prop('disabled', true);
     $('#btn_modif').prop('disabled', true);
+    tooltips(true);
+
+
+
+    function tooltips(b) {
+      if(b){
+        $('[data-toggle="tooltip"]').tooltip('enable');
+      }else{
+        $('[data-toggle="tooltip"]').tooltip('disable');
+      }
+    }
+
+
+    $(document).click(function(event) {
+        if(!$(event.target).closest('#table_vote').length && !$(event.target).closest('#modal_suppr').length && !$(event.target).closest('#btn_suppr').length ) {
+            $(".table-active").removeClass('table-active');
+        }
+
+        if($(".table-active")[0]===undefined){
+          $('#btn_suppr').prop('disabled', true);
+          $('#btn_modif').prop('disabled', true);
+          tooltips(true);
+        }else{
+          tooltips(false);
+          $('#btn_suppr').prop('disabled', false);
+          $('#btn_modif').prop('disabled', false);
+        }
+    });
+
+
 
     $('#form_ajout_vote').submit(function(event){
         // cancels the form submission
@@ -47,19 +77,7 @@ $(document).ready ( function () {
          v_vote=tr[4].textContent;
     });
 
-    $(document).click(function(event) {
-        if(!$(event.target).closest('#table_vote').length) {
-            $(".table-active").removeClass('table-active');
-        }
 
-        if($(".table-active")[0]===undefined){
-          $('#btn_suppr').prop('disabled', true);
-          $('#btn_modif').prop('disabled', true);
-        }else{
-          $('#btn_suppr').prop('disabled', false);
-          $('#btn_modif').prop('disabled', false);
-        }
-    });
 
     document.getElementById("btn_ajout").addEventListener('click',function clean_form (){
       document.forms.form_ajout_vote.date.value=null;
@@ -78,7 +96,7 @@ $(document).ready ( function () {
       modify=true;
     });
 
-    document.getElementById("btn_suppr").addEventListener('click',delete_vote);
+    document.getElementById("btn_conf_suppr").addEventListener('click',delete_vote);
 
     function ajout_vote (){
         if(modify){
