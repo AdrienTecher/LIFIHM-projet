@@ -2,11 +2,11 @@ table.collapse.show{
   display:table;
 }
 
-#table_vote .tr:hover{
+#table_vote tbody .tr:hover{
    background-color: violet!important;
 }
 
-#table_vote .table-active{
+#table_vote tbody .table-active{
     background-color: purple!important;
 }
 

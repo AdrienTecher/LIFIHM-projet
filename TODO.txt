@@ -2,3 +2,5 @@
 - modification d'un vote
 - recherche de contenu
 - footer : css3 html5 bootstrap noms
+- modifier noms variables
+- css/html beautifier + validator
