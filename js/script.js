@@ -43,21 +43,22 @@ $(document).ready ( function () {
         counter=0;
         for (i = 0; i < tr.length; i++) {
             if (tr[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                appear(tr[i]);
+                //appear(tr[i]);
                 tr[i].classList.add("visible");
                 tr[i].classList.remove("invisible");
-            } else
+            } else{
                 tr[i].classList.add("invisible");
                 tr[i].classList.remove("visible");
                 /*window.setTimeout(disappear(tr[i]),500);*/
                 counter++;
             }
-
+          }
         if(counter==tr.length){
           $("#search_message").animate({ opacity: 1 });
         }else{
           $("#search_message").animate({ opacity: 0 });
         }
+      
     });
 
 
