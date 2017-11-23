@@ -23,6 +23,43 @@ $(document).ready ( function () {
       }
     }
 
+    function appear(obj) {
+        obj.classList.remove("peeka");
+    }
+
+    function disappear(obj) {
+        obj.classList.add("peeka");
+    }
+
+    document.getElementById("barre_recherche").addEventListener('input',function search() {
+        // Declare variables
+        var input, filter, tab, tr, a, i,counter;
+        input = document.getElementById('barre_recherche');
+        filter = input.value.toUpperCase();
+        tab = document.getElementById("tab_body");
+        tr = tab.getElementsByTagName('tr');
+
+        // Loop through all list items, and hide those who don't match the search query
+        counter=0;
+        for (i = 0; i < tr.length; i++) {
+            if (tr[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                appear(tr[i]);
+                tr[i].classList.add("visible");
+                tr[i].classList.remove("invisible");
+            } else
+                tr[i].classList.add("invisible");
+                tr[i].classList.remove("visible");
+                /*window.setTimeout(disappear(tr[i]),500);*/
+                counter++;
+            }
+
+        if(counter==tr.length){
+          $("#search_message").animate({ opacity: 1 });
+        }else{
+          $("#search_message").animate({ opacity: 0 });
+        }
+    });
+
 
     $(document).click(function(event) {
         if(!$(event.target).closest('#table_vote').length && !$(event.target).closest('#modal_suppr').length && !$(event.target).closest('#btn_suppr').length ) {
