@@ -28,14 +28,49 @@
           <h1 class="text-center">Gestionaire de votes</h1>
         </div>
       </div>
-      <div class="row mt-5 mb-5">
-        <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8 no-padding">
+
+      <div class="row">
+        <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-9 ">
+          <div class="row center">
+            <div class="col-md-12 col-lg-auto align-self-center mb-2">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_ajout">
+              <i class="fa fa-plus-square fa-fw"></i>
+              Ajouter un vote
+            </button>
+
+          </div>
+          <div class="col-md-12 col-lg-auto align-self-center mb-2">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_modif">
+              <a data-toggle="tooltip" data-placement="top" title="Veuillez selectionner un vote">
+                <i class="fa fa-edit fa-fw"></i>
+                Modifier le vote
+              </a>
+            </button>
+          </div>
+          <div class="col-md-12 col-lg-auto align-self-center mb-2">
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_suppr" id="btn_suppr">
+              <a data-toggle="tooltip" data-placement="top" title="Veuillez selectionner un vote">
+                <i class="fa fa-trash fa-fw"></i>
+                Supprimer le vote
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+      <div class="row mt-5 mb-2">
+        <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8 ">
           <input type="text" id="barre_recherche" placeholder="Chercher dans le tableau..."></input>
           <p id="search_message">La recherche n'a donnée aucun résultat</p>
         </div>
       </div>
-      <div class="row mt-4 mb-4">
-        <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8 no-padding">
+      <div class="row mb-4">
+        <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8 ">
           <button data-toggle="collapse" data-target="#table_vote" class="btn btn-secondary btn-sm"><i class="fa fa-bars fa-fw"></i>Afficher/Réduire</button>
           <div class="table-responsive show" id="table_vote">
             <table class="table table-bordered table-hover table-striped table-condensed" >
@@ -55,40 +90,30 @@
                 <tr>
                   <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
                 </tr>
+                <tr>
+                  <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
+                </tr>
+                <tr>
+                  <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
+                </tr>
+                <tr>
+                  <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
+                </tr>
+                <tr>
+                  <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
+                </tr>
+                <tr>
+                  <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
+                </tr>
+                <tr>
+                  <td>29/09/2017</td><td>Nishida</td><td>Kitaro</td><td>keepcalmandlookeastwest@basho.ac.jp</td><td>Mediter</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-2 offset-sm-3 col-sm-3 offset-md-2 col-md-8 offset-lg-2 col-lg-8 ">
-          <div class="row">
-          <div class="col-4">
-          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_ajout">
-            <i class="fa fa-plus-square fa-fw"></i>
-            Ajouter un vote
-          </button>
 
-        </div>
-        <div class="col-4">
-          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_ajout" id="btn_modif">
-            <a data-toggle="tooltip" data-placement="top" title="Veuillez selectionner un vote">
-              <i class="fa fa-edit fa-fw"></i>
-              Modifier le vote
-            </a>
-          </button>
-        </div>
-        <div class="col-4 no-padding">
-          <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal_suppr" id="btn_suppr">
-            <a data-toggle="tooltip" data-placement="top" title="Veuillez selectionner un vote">
-              <i class="fa fa-trash fa-fw"></i>
-              Supprimer le vote
-            </a>
-          </button>
-      </div>
-    </div>
-    </div>
-    </div>
 
 
     <!-- Modal -->

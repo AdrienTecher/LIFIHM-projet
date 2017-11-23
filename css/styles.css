@@ -4,8 +4,12 @@ table.collapse.show{
 
 #table_vote tbody {
    cursor:cell;
+   overflow-y: auto;
+   overflow-x: hidden;
+   max-height: 20%;
 }
 
+#search_message{margin: 0px;}
 
 #table_vote tbody .tr:hover{
    background-color: violet!important;
