@@ -18,11 +18,11 @@ table.collapse.show {
 #search_message {
     margin: 0px;
 }
-#table_vote tbody .tr:hover {
-    background-color: violet!important;
+#table_vote tbody tr:hover {
+    background-color: #acd7fd!important;
 }
 #table_vote tbody .table-active {
-    background-color: purple!important;
+    background-color: #acd7fd!important;
 }
 .box {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -43,6 +43,7 @@ table.collapse.show {
 .invisible {
     opacity: 0;
     visibility: hidden;
+    display: none;
     -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
     -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
     -o-transition: visibility 0.2s linear, opacity 0.2s linear;
@@ -53,6 +54,7 @@ table.collapse.show {
 .visible {
     opacity: 1;
     visibility: visible;
+    display:"";
     -webkit-transition: visibility 0.2s linear, opacity 0.2s linear;
     -moz-transition: visibility 0.2s linear, opacity 0.2s linear;
     -o-transition: visibility 0.2s linear, opacity 0.2s linear;
@@ -113,4 +115,14 @@ footer img {
 }
 .fr img {
     width: 90px;
+}
+
+.btn-main{
+  background-color: #4790d0;
+  border-color: #4790d0;
+}
+
+.btn-main:disabled{
+  background-color:#487398;
+  border-color:#487398;
 }

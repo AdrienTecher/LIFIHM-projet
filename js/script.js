@@ -47,9 +47,11 @@ $(document).ready(function() {
                 tr[i].classList.add("visible");
                 tr[i].classList.remove("invisible");
             } else {
+                //disappear(tr[i]),500);
+
                 tr[i].classList.add("invisible");
                 tr[i].classList.remove("visible");
-                /*window.setTimeout(disappear(tr[i]),500);*/
+                
                 counter++;
             }
         }
